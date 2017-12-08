@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text;
@@ -73,6 +74,7 @@ namespace TechJobs.Models
             return jobs;
         }
 
+        
         /**
          * Returns results of search the jobs data by key/value, using
          * inclusion of the search term.
@@ -89,9 +91,9 @@ namespace TechJobs.Models
 
             foreach (Dictionary<string, string> row in AllJobs)
             {
-                //string aValue = row[column];
+                string aValue = row[column];
 
-                //if (aValue.ToLower().Contains(value.ToLower()))
+                if (aValue.ToLower().Contains(value.ToLower()))
                 {
                     jobs.Add(row);
                 }

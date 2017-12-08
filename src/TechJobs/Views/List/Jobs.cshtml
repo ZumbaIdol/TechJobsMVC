@@ -2,28 +2,26 @@
 
 <h3>@ViewBag.jobs.Count Result(s)</h3>
 
-@{
-    // TODO #3 - Use the same list display from Views/Search/Index.cshtml
-    if (ViewBag.jobs.Count > 0)
+        
+    @if (ViewBag.jobs.Count > 0)
     {
         @foreach (Dictionary<string, string> item in ViewBag.jobs)
+        {<table>
+   
+        @foreach (KeyValuePair<string, string> pair in item)
         {
-            @foreach (KeyValuePair<string, string> pair in item)
-            {
-                <table>
-                    <tr bgcolor="#EAECEE">
-                        <th>@pair.Key</th>
-                        <td>@pair.Value</td>
-                    </tr>
-                    <tr>
-                        <th>@pair.Key</th>
-                        <td>@pair.Value</td>
-                    </tr>
 
-                </table>
+            <tr>
+                <th>@pair.Key</th>
+                <td>@pair.Value</td>
+                
+            </tr>
 
-            }
 
+
+
+        }
+    </table>
         }
 
     }
